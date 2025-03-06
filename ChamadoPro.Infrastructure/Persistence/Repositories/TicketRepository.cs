@@ -18,7 +18,7 @@ namespace ChamadoPro.Infrastructure.Persistence.Repositories
             return await _context.Tickets.ToListAsync();
         }
 
-        public async Task<Ticket> GetByIdAsync(int id)
+        public async Task<Ticket?> GetByIdAsync(int id)
         {
             return await _context.Tickets
                 .Include(t => t.Category)
@@ -84,7 +84,7 @@ namespace ChamadoPro.Infrastructure.Persistence.Repositories
         public async Task DeleteAsync(int id)
         {
             var ticket = await GetByIdAsync(id);
-            _context.Remove(ticket);
+            _context.Tickets.Remove(ticket);
             await _context.SaveChangesAsync();
         }
     }

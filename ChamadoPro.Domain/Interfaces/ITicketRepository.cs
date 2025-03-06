@@ -5,7 +5,7 @@ namespace ChamadoPro.Domain.Interfaces
 {
     public interface ITicketRepository
     {
-        Task<Ticket> GetByIdAsync(int id);
+        Task<Ticket?> GetByIdAsync(int id);
         Task<IEnumerable<Ticket>> GetByUserIdAsync(int userId);
         Task<IEnumerable<Ticket>> GetByResponsibleAsync(int responsibleId);
         Task<IEnumerable<Ticket>> GetByStatusAsync(Status status);
