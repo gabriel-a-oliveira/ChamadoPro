@@ -8,6 +8,6 @@ namespace ChamadoPro.Domain.Interfaces
         Task<Attachment> GetByIdAsync(int id);
         Task<Attachment> CreateAsync(Attachment attachment);
         Task<Attachment> UpdateAsync(Attachment attachment);
-        Task DeleteAsync(Attachment attachment);
+        Task DeleteAsync(int id);
     }
 }
