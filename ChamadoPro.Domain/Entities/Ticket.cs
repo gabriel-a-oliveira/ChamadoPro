@@ -1,4 +1,6 @@
-﻿namespace ChamadoPro.Domain.Entities
+﻿using ChamadoPro.Domain.Enums;
+
+namespace ChamadoPro.Domain.Entities
 {
     public class Ticket
     {
@@ -9,9 +11,10 @@
         public Priority Priority { get; set; }
         public Category Category { get; set; }
         public DateTime Date_created { get; set; }
-        public DateTime Conclusion { get; set; }
-        public User Id_User { get; set; }
-        public User requester_user_id { get; set; }
-        public User responsible_user_id { get; set; }
+        public DateTime? ConcludedAt { get; set; }
+        public int RequesterId { get; set; }
+        public User Requester { get; set; }
+        public int ResponsibleId { get; set; }
+        public User Responsible { get; set; }
     }
 }

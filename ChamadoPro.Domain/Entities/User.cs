@@ -1,4 +1,6 @@
-﻿namespace ChamadoPro.Domain.Entities
+﻿using ChamadoPro.Domain.Enums;
+
+namespace ChamadoPro.Domain.Entities
 {
     public class User
     {
