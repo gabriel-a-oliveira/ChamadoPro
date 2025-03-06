@@ -9,6 +9,7 @@ namespace ChamadoPro.Domain.Entities
         public string Description { get; set; }
         public Status Status { get; set; }
         public Priority Priority { get; set; }
+        public int CategoryId { get; set; }
         public Category Category { get; set; }
         public DateTime Date_created { get; set; }
         public DateTime? ConcludedAt { get; set; }
