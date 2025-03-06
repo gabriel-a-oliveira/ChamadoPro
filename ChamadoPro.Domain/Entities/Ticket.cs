@@ -15,7 +15,7 @@ namespace ChamadoPro.Domain.Entities
         public DateTime? ConcludedAt { get; set; }
         public int RequesterId { get; set; }
         public User Requester { get; set; }
-        public int ResponsibleId { get; set; }
+        public int? ResponsibleId { get; set; }
         public User Responsible { get; set; }
     }
 }
