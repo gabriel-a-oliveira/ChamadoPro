@@ -1,6 +1,9 @@
 ﻿namespace ChamadoPro.Application.DTOs.Attachment
 {
-    internal class AttachmentRequestDTO
+    public class AttachmentRequestDTO
     {
+        public int TicketId { get; set; }
+        public string Name { get; set; }
+        public string FileUrl { get; set; }
     }
 }

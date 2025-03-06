@@ -1,6 +1,7 @@
 ﻿namespace ChamadoPro.Application.DTOs.Category
 {
-    internal class CategoryRequestDTO
+    public class CategoryRequestDTO
     {
+        public string Name { get; set; }
     }
 }

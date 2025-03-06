@@ -1,6 +1,13 @@
-﻿namespace ChamadoPro.Application.DTOs.User
+﻿using ChamadoPro.Domain.Enums;
+
+namespace ChamadoPro.Application.DTOs.User
 {
-    internal class UserResponseDTO
+    public class UserResponseDTO
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public UserRole Role { get; set; }
+        public UserStatus Status { get; set; }
     }
 }
