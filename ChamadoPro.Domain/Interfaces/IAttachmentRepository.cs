@@ -4,10 +4,10 @@ namespace ChamadoPro.Domain.Interfaces
 {
     public interface IAttachmentRepository
     {
-        Task<IEnumerable<Attachment>> GetAttachmentsByTicketIdAsync(int ticketId);
-        Task<Attachment> GetAttachmentByIdAsync(int id);
-        Task<Attachment> CreateAttachmentAsync(Attachment attachment);
-        Task<Attachment> UpdateAttachmentAsync(Attachment attachment);
-        Task DeleteAttachmentAsync(Attachment attachment);
+        Task<IEnumerable<Attachment>> GetByTicketIdAsync(int ticketId);
+        Task<Attachment> GetByIdAsync(int id);
+        Task<Attachment> CreateAsync(Attachment attachment);
+        Task<Attachment> UpdateAsync(Attachment attachment);
+        Task DeleteAsync(Attachment attachment);
     }
 }
