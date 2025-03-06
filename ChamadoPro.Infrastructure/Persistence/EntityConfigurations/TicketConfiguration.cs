@@ -28,6 +28,12 @@ namespace ChamadoPro.Infrastructure.Persistence.EntityConfigurations
                 .HasConversion<string>()
                 .IsRequired();
 
+            builder.Property(t => t.CategoryId)
+                .IsRequired(false);
+
+            builder.Property(t => t.ResponsibleId)
+                .IsRequired(false);
+
             builder.HasOne(t => t.Category)
                 .WithMany()
                 .HasForeignKey(t => t.CategoryId)
@@ -49,6 +55,7 @@ namespace ChamadoPro.Infrastructure.Persistence.EntityConfigurations
 
             builder.Property(t => t.ConcludedAt)
                 .IsRequired(false);
+
         }
     }
 }

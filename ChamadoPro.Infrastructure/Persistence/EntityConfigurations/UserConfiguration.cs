@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ChamadoPro.Domain.Entities;
+﻿using ChamadoPro.Domain.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 
