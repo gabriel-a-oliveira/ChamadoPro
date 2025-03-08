@@ -8,7 +8,7 @@ namespace ChamadoPro.Application.Interfaces
         Task<IEnumerable<AttachmentResponseDTO>> GetByTicketIdAsync(int ticketId);
         Task<AttachmentResponseDTO> GetByIdAsync(int id);
         Task<AttachmentResponseDTO> CreateAsync(AttachmentRequestDTO attachment);
-        Task<AttachmentResponseDTO> UpdateAsync(AttachmentRequestDTO attachment);
+        Task<AttachmentResponseDTO> UpdateAsync(int id, AttachmentRequestDTO attachment);
         Task DeleteAsync(int id);
     }
 }

@@ -16,27 +16,80 @@ namespace ChamadoPro.Application.Services.TicketService
 
         public async Task<AttachmentResponseDTO> CreateAsync(AttachmentRequestDTO attachment)
         {
+            var attachmentEntity = new Attachment
+            {
+                TicketId = attachment.TicketId,
+                Name = attachment.Name,
+                FileUrl = attachment.FileUrl,
+                DateCreated = DateTime.Now
+            };
 
+            var createdAttachment = await _attachmentRepository.CreateAsync(attachmentEntity);
+            
+            return new AttachmentResponseDTO
+            {
+                Id = createdAttachment.Id,
+                TicketId = createdAttachment.TicketId,
+                Name = createdAttachment.Name,
+                FileUrl = createdAttachment.FileUrl,
+                DateCreated = createdAttachment.DateCreated
+            };
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            await _attachmentRepository.DeleteAsync(id);
         }
 
-        public Task<AttachmentResponseDTO> GetByIdAsync(int id)
+        public async Task<AttachmentResponseDTO> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var attachmentEntity = await _attachmentRepository.GetByIdAsync(id);
+
+            return new AttachmentResponseDTO
+            {
+                Id = attachmentEntity.Id,
+                TicketId = attachmentEntity.TicketId,
+                Name = attachmentEntity.Name,
+                FileUrl = attachmentEntity.FileUrl,
+                DateCreated = attachmentEntity.DateCreated
+            };
         }
 
-        public Task<IEnumerable<AttachmentResponseDTO>> GetByTicketIdAsync(int ticketId)
+        public async Task<IEnumerable<AttachmentResponseDTO>> GetByTicketIdAsync(int ticketId)
         {
-            throw new NotImplementedException();
+            var attachments = await _attachmentRepository.GetByTicketIdAsync(ticketId);
+
+            return attachments.Select(a => new AttachmentResponseDTO
+            {
+                Id = a.Id,
+                TicketId = a.TicketId,
+                Name = a.Name,
+                FileUrl = a.FileUrl,
+                DateCreated = a.DateCreated
+            });
         }
 
-        public Task<AttachmentResponseDTO> UpdateAsync(AttachmentRequestDTO attachment)
+        public async Task<AttachmentResponseDTO> UpdateAsync(int id, AttachmentRequestDTO attachment)
         {
-            throw new NotImplementedException();
+            var attachmentEntity = new Attachment
+            {
+                Id = id,
+                TicketId = attachment.TicketId,
+                Name = attachment.Name,
+                FileUrl = attachment.FileUrl,
+                DateCreated = DateTime.Now
+            };
+
+            var updatedAttachment = await _attachmentRepository.UpdateAsync(attachmentEntity);
+
+            return new AttachmentResponseDTO
+            {
+                Id = updatedAttachment.Id,
+                TicketId = updatedAttachment.TicketId,
+                Name = updatedAttachment.Name,
+                FileUrl = updatedAttachment.FileUrl,
+                DateCreated = updatedAttachment.DateCreated
+            };
         }
     }
 }
