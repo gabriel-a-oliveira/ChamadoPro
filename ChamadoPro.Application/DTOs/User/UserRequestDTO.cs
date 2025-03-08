@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ChamadoPro.Domain.Entities;
 using ChamadoPro.Domain.Enums;
 
 namespace ChamadoPro.Application.DTOs.User
