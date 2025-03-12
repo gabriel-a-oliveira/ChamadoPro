@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ChamadoPro.Application\ChamadoPro.Application.csproj" />
     <ProjectReference Include="..\ChamadoPro.Infrastructure\ChamadoPro.Infrastructure.csproj" />
   </ItemGroup>
 

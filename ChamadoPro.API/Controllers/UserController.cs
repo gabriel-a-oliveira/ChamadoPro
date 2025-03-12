@@ -7,5 +7,6 @@ namespace ChamadoPro.API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+
     }
 }
