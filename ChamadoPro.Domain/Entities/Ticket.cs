@@ -11,7 +11,7 @@ namespace ChamadoPro.Domain.Entities
         public Priority Priority { get; set; }
         public int? CategoryId { get; set; }
         public Category? Category { get; set; }
-        public DateTime Date_created { get; set; }
+        public DateTime DateCreated { get; set; }
         public DateTime? ConcludedAt { get; set; }
         public int RequesterId { get; set; }
         public User Requester { get; set; }

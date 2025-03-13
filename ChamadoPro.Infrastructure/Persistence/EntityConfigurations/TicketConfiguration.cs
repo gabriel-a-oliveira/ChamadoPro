@@ -49,7 +49,7 @@ namespace ChamadoPro.Infrastructure.Persistence.EntityConfigurations
                 .HasForeignKey(t => t.ResponsibleId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.Property(t => t.Date_created)
+            builder.Property(t => t.DateCreated)
                 .IsRequired()
                 .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
