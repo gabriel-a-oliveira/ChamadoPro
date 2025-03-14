@@ -20,14 +20,7 @@ namespace ChamadoPro.Infrastructure.Persistence.Repositories
 
         public async Task<IEnumerable<User>> GetAllAsync()
         {
-            var users = await _context.Users.ToListAsync();
-
-            if (users == null || !users.Any())
-            {
-                return Enumerable.Empty<User>();
-            }
-
-            return users;
+            return await _context.Users.ToListAsync();
         }
 
         public async Task<User> CreateAsync(User user)
