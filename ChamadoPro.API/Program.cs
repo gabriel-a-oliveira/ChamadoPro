@@ -1,3 +1,7 @@
+using ChamadoPro.Application.Interfaces;
+using ChamadoPro.Application.Services.CategoryServices;
+using ChamadoPro.Application.Services.TicketService;
+using ChamadoPro.Application.Services.UserServices;
 using ChamadoPro.Domain.Interfaces;
 using ChamadoPro.Infrastructure.Persistence;
 using ChamadoPro.Infrastructure.Persistence.Repositories;
@@ -12,6 +16,11 @@ builder.Services.AddScoped<IAttachmentRepository, AttachmentRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ITicketRepository, TicketRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddScoped<IAttachmentService, AttachmentService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ITicketService, TicketService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
